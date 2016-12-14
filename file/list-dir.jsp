@@ -1,5 +1,10 @@
 <%@page import="java.io.*,java.util.*"%><%
 
+//File currentfile = new File(request.getRealPath(request.getServletPath()));
+//File currentdir = currentfile.getParentFile();
+//File[] m=new File(request.getRealPath(request.getServletPath())).getParentFile().listFiles();//files
+
+
 File currentfile = new File(request.getRealPath(request.getServletPath()));
 File currentdir = currentfile.getParentFile();
 File[] m=currentdir.listFiles();
