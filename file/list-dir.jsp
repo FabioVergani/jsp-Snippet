@@ -5,10 +5,14 @@ File currentdir = currentfile.getParentFile();
 File[] m=currentdir.listFiles();
 
 Arrays.sort(m);
+StringBuffer s = new StringBuffer("");//filename(s)
+
 
 for(int i=0, l=m.length; i<l ; i++){
  if(m[i].isDirectory()){
-  out.println(m[i].getName()+"<br>");
+  s.append(e.getName()+"\r");
  };
 }
+
+out.println(s);
 %>
