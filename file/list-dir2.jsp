@@ -1,6 +1,11 @@
 <%@page import="java.io.*,java.util.*"%><!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui"><title>Dir presenti</title></head><body>
 <pre><%
 
+//File currentfile = new File(request.getRealPath(request.getServletPath()));
+//File currentdir = currentfile.getParentFile();
+//File[] m=new File(request.getRealPath(request.getServletPath())).getParentFile().listFiles();//files
+
+
 File[] m=new File(request.getRealPath(request.getServletPath())).getParentFile().listFiles();//files
 
 Arrays.sort(m);
