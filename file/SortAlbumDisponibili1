@@ -1,0 +1,58 @@
+<%@page import="java.io.*,java.util.*"%><!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,minimal-ui"><title></title></head><body><%
+String s=request.getParameter("debug");
+Boolean debugme=(s==null||"".equals(s))?false:"1".equals(s);
+
+s="/usr/share/tomcat_adv/webapps/xxxx/res";
+//s=(s+"/script/gallery/album");//thePath for Files
+s=(s+"/image/gallery/album");//thePath for Dirs
+
+File[] m=new File(s).listFiles();
+s=null;
+if(m.length>0){
+ File e=null;//file
+ String n="";
+ List<String> AlbumDisponibili = new ArrayList<String>();
+ for(int i=0,l=m.length; i<l; i++){
+  e=m[i];
+
+  if(e.isDirectory()){
+   n=e.getName().toLowerCase();
+   AlbumDisponibili.add(n);
+  };
+
+/*
+
+  if(e.isFile()){
+   n=e.getName().toLowerCase();
+   if(n.endsWith(".js")){
+    n=n.substring(0,n.length()-3);
+    AlbumDisponibili.add(n);
+   };
+  };
+*/
+
+ };
+ //Collections.sort(AlbumDisponibili);
+
+ Collections.sort(AlbumDisponibili, new Comparator<String>(){@Override
+  public int compare(String a, String b){return new Integer(a).compareTo(new Integer(b));}
+ });
+
+ //
+ if(debugme){
+ out.print("<pre>");
+ //
+ StringBuffer sb=new StringBuffer("");
+ for(String x:AlbumDisponibili){sb.append(x+"\r");};
+ out.print(sb+"\r</pre>");
+ }
+}else{
+ response.sendRedirect("/");
+};
+
+
+%>
+
+
+
+</body></html>
