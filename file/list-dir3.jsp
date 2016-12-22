@@ -17,7 +17,7 @@ Collections.sort(s, new Comparator<String>(){@Override
 
 StringBuffer sb=new StringBuffer("");
 for(String x:s){sb.append(x+"\r");};
-out.print("<pre>"+sb+"\r</pre>");
+out.print("<pre>\n\r"+sb+"</pre>");
 
 %>
 </body></html>
