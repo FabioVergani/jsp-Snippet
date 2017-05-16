@@ -11,9 +11,7 @@ for(int i=0,l=m.length; i<l; i++){
  };
 };
 
-Collections.sort(s, new Comparator<String>(){@Override
- public int compare(String a, String b){return new Integer(a).compareTo(new Integer(b));}
-});
+Collections.sort(s);
 
 StringBuffer sb=new StringBuffer("");
 for(String x:s){sb.append(x+"\r");};
