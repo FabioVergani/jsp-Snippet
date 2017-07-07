@@ -15,7 +15,9 @@ for(int i=0,l=m.length; i<l; i++){
  if(e.isFile()){
   n=e.getName().toLowerCase();
   if(n.endsWith(".jpg")){
-   s.add(n.substring(0,n.length()-4));++totale;
+   //s.add(n.substring(0,n.length()-4));
+   s.add(n);
+   ++totale;
   };
  };
 };
