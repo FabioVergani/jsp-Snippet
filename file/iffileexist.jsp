@@ -10,6 +10,45 @@ if(new File(css).exists()){
 };
 %>
 
+oppure:
+
+
+<%
+String x_default="zzz";
+String x=request.getParameter("col");
+
+if((x==null)||("".equals(x))||x_default.equals(x)){
+
+ x=x_default;
+ 
+}else{%><%@page import="java.io.File"%><%
+
+	
+	String x_css=getServletContext().getRealPath("/style/"+x+".css");
+
+	if(!new File(x_css).exists()){
+		x=x_default;
+	};
+
+};
+
+%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 <%
