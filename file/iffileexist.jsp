@@ -1,3 +1,5 @@
+<%@page import="java.io.File"%><%
+
 String cxp=request.getContextPath();
 String css=getServletContext().getRealPath((cxp+"/style/zzz.css"));
 
@@ -6,7 +8,7 @@ if(new File(css).exists()){
 }else{
 	%>0<%
 };
-
+%>
 
 
 /*
