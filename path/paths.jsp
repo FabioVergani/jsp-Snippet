@@ -6,6 +6,7 @@
 	<body>
 <%
 
+	String p0=request.getRequestURL().toString();
 	String p1=request.getRequestURI();
 	String p2=application.getRealPath(p1);
 	String p3=application.getRealPath("/"); 
@@ -14,11 +15,17 @@
 
 	StringBuffer sb=new StringBuffer();
 	sb.append("<pre>");
-	sb.append("RequestURI: <b>"+p1+"</b>\n");
+	sb.append("RequestURL: <b>"+p0+"</b>\n");
+	sb.append("RequestURI: <b>"+p1+"</b>\n\n");
+
+	sb.append("ServletContext RealPath (absolute): <b>"+getServletContext().getRealPath("/")+"</b>\n\n");
+
 	sb.append("The physical path of the current JSP: <b>"+p2+"</b>\n");
-	sb.append("The physical path to the current WEB application: <b>"+p3+"</b>\n");
+	sb.append("The physical path to the current WEB application: <b>"+p3+"</b>\n\n");
+
 	sb.append("The ServletPath path: <b>"+p4+"</b> ( virtual ) \n");
 	sb.append("The physical path from virtual: <b>"+p5+"</b>");
+
 	sb.append("</pre>");
 	out.print(sb);
 	sb.setLength(0);//eq:sb.delete(0,sb.length());
