@@ -1,1 +1,11 @@
-
+//StringBuffer sb=new StringBuffer();
+//sb.append(System.currentTimeMillis());
+Enumeration requestParameterNames=request.getParameterNames();
+	while(requestParameterNames.hasMoreElements()){
+	String Name=requestParameterNames.nextElement().toString();
+	String Value=request.getParameter(Name);
+	//sb.append(URLDecoder.decode(Value,"UTF-8")+",");
+};
+//String Data2Save=sb.toString();
+//sb.setLength(0);//eq:sb.delete(0,sb.length());
+//sb=null;
